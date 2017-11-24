@@ -1,3 +1,5 @@
 
+chmod +x /users/igorkalennyy/G*/iOS590/ClassProjects/FinalProject/FinalClass2/PracticeStarSwift/FindPath.txt
+
 cd /users/igorkalennyy/G*/iOS590/ClassProjects/FinalProject/FinalClass2/PracticeStarSwift
 
