@@ -1,0 +1,3 @@
+
+cd /users/igorkalennyy/G*/iOS590/ClassProjects/FinalProject/FinalClass2/PracticeStarSwift
+
