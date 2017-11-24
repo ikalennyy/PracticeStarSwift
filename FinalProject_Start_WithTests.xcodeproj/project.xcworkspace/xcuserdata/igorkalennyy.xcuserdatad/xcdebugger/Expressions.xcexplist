@@ -6,7 +6,7 @@
          contextName = "TaskItem.assignPoint() -&gt; ():Task.swift">
       </ContextState>
       <ContextState
-         contextName = "Task.init(original : Task) -&gt; Task:Task.swift">
+         contextName = "Task.AllTaskItemsPracticed.getter:Task.swift">
       </ContextState>
       <ContextState
          contextName = "SegmentedViewController.viewDidLoad() -&gt; ():SegmentedViewController.swift">
@@ -20,18 +20,15 @@
          contextName = "TasksViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:TasksViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "theModel?[indexPath.row]">
+               value = "task.Items?[indexPath.row]">
             </PersistentString>
             <PersistentString
                value = "indexPath.row">
             </PersistentString>
             <PersistentString
-               value = "task.Items?[indexPath.row]">
+               value = "theModel?[indexPath.row]">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AssignmentListViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:AssignmentListViewController.swift">
       </ContextState>
       <ContextState
          contextName = "AwardsViewController.viewDidAppear(Bool) -&gt; ():AwardsViewController.swift">
@@ -42,6 +39,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AssignmentListViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:AssignmentListViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "GLOBAL">
          <PersistentStrings>
             <PersistentString
@@ -50,13 +50,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SegmentedViewController.displayCurrentTab(Int) -&gt; ():SegmentedViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.contentView.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "self.contentView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Assignment.ValidatedTasksItemsRatio.getter:Assignment.swift">
          <PersistentStrings>
             <PersistentString
-               value = "GetNumberOfValidatedTaskItems / GetNumberOfTaskItems">
+               value = "validated / total">
             </PersistentString>
             <PersistentString
-               value = "validated / total">
+               value = "GetNumberOfValidatedTaskItems / GetNumberOfTaskItems">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -65,17 +76,6 @@
          <PersistentStrings>
             <PersistentString
                value = "navigationItem.title ">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SegmentedViewController.displayCurrentTab(Int) -&gt; ():SegmentedViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.contentView">
-            </PersistentString>
-            <PersistentString
-               value = "self.contentView.subviews">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -192,10 +192,10 @@
          contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "appmodel?.setting.isStudent">
+               value = "self.window!.rootViewController">
             </PersistentString>
             <PersistentString
-               value = "self.window!.rootViewController">
+               value = "appmodel?.setting.isStudent">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -256,6 +256,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AwardsComposite.setupControL(student : Student, settings : Settings) -&gt; ():AwardsComposite.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.LaurelControl.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AssignmentListViewController.theStudentModel.didset:AssignmentListViewController.swift">
       </ContextState>
       <ContextState
@@ -265,6 +273,9 @@
                value = "task.TotalPracticePoints">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Task.init(original : Task) -&gt; Task:Task.swift">
       </ContextState>
       <ContextState
          contextName = "AssignmentCellCtrl.setAssignmentMode(mode : AssignmentMode) -&gt; ():AssignmentCellCtrl.swift">
@@ -287,9 +298,6 @@
                value = "appDelegate?.appmodel?.setting">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Task.AllTaskItemsPracticed.getter:Task.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

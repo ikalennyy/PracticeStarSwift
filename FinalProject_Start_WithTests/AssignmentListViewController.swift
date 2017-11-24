@@ -8,7 +8,7 @@
 // October 7, 2017
 import UIKit
 
-class AssignmentListViewController: UITableViewController {
+class AssignmentListViewController: UITableViewController,DataReloadable {
 
     var isStudent: Bool = false
     @IBAction func btnViewDays_Action(_ sender: UIButton) {
@@ -33,8 +33,16 @@ class AssignmentListViewController: UITableViewController {
         theModel = theStudent.getAllAssignments()
         
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-       // tableView.separatorColor = UIColor.init(red: 0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1)
-
+       // tableView.separatorColor = UIColor.init(red: 0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1)     
+        
+        self.tableView.refreshControl = CreateRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(QueryDatabase), for: .valueChanged)
+        
+    }
+    
+    func QueryDatabase(){
+        self.tableView.refreshControl?.endRefreshing()
+        print("will go to the iCloud and fetch the records")
     }
     override func viewDidAppear(_ animated: Bool) {
         //

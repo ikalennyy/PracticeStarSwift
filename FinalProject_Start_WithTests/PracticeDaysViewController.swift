@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PracticeDaysViewController: UITableViewController {
+class PracticeDaysViewController: UITableViewController,DataReloadable {
 
     var theAssignment: Assignment!{
         didSet{
@@ -23,10 +23,18 @@ class PracticeDaysViewController: UITableViewController {
         super.viewDidLoad()
         
         theModel = theAssignment.getAllPracticeUnits()
+        
+        self.tableView.refreshControl = CreateRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(QueryDatabase), for: .valueChanged)
     }
     override func viewDidAppear(_ animated: Bool) {
         //
         tableView.reloadData()
+    }
+    
+    func QueryDatabase(){
+        self.tableView.refreshControl?.endRefreshing()
+        print("will go to the iCloud and fetch the records")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        

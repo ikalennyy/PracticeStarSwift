@@ -9,7 +9,7 @@
 
 import UIKit
 
-class StudentListViewController: UITableViewController {
+class StudentListViewController: UITableViewController,DataReloadable {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -21,9 +21,16 @@ class StudentListViewController: UITableViewController {
                
         theModel = appDelegate.appmodel?.getAllStudents()
         theSetting = appDelegate.appmodel?.setting
+        
+        self.tableView.refreshControl = CreateRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(QueryDatabase), for: .valueChanged)
     }
 
-
+    func QueryDatabase(){
+        self.tableView.refreshControl?.endRefreshing()
+        print("will go to the iCloud and fetch the records")
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
 
         return 1

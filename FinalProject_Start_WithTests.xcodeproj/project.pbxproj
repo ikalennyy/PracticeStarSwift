@@ -27,6 +27,10 @@
 		FA2690391F913C6400B3B048 /* TaskItemViewDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2690381F913C6400B3B048 /* TaskItemViewDayCell.swift */; };
 		FA458B4B1FAFE62900B939AD /* TaskItemViewValidateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA458B4A1FAFE62900B939AD /* TaskItemViewValidateCell.swift */; };
 		FA460B8B1FB25D7F00448D65 /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA460B8A1FB25D7F00448D65 /* SegmentedViewController.swift */; };
+		FA63342F1FC4F06C008E74F1 /* OverallProgress.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA63342E1FC4F06C008E74F1 /* OverallProgress.xib */; };
+		FA6334331FC4F381008E74F1 /* OverallProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6334321FC4F381008E74F1 /* OverallProgress.swift */; };
+		FA6334351FC4F68B008E74F1 /* AwardsComposite.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6334341FC4F68B008E74F1 /* AwardsComposite.xib */; };
+		FA6334371FC4F6C7008E74F1 /* AwardsComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6334361FC4F6C7008E74F1 /* AwardsComposite.swift */; };
 		FA8516861FA6BF06001FAD44 /* AssignmentViewCellCurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8516851FA6BF06001FAD44 /* AssignmentViewCellCurrent.swift */; };
 		FAA609361F896C2F00F29B39 /* StudentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA609351F896C2F00F29B39 /* StudentViewCell.swift */; };
 		FAA609381F896E3F00F29B39 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA609371F896E3F00F29B39 /* Factory.swift */; };
@@ -89,6 +93,10 @@
 		FA2690381F913C6400B3B048 /* TaskItemViewDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItemViewDayCell.swift; sourceTree = "<group>"; };
 		FA458B4A1FAFE62900B939AD /* TaskItemViewValidateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItemViewValidateCell.swift; sourceTree = "<group>"; };
 		FA460B8A1FB25D7F00448D65 /* SegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		FA63342E1FC4F06C008E74F1 /* OverallProgress.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverallProgress.xib; sourceTree = "<group>"; };
+		FA6334321FC4F381008E74F1 /* OverallProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverallProgress.swift; sourceTree = "<group>"; };
+		FA6334341FC4F68B008E74F1 /* AwardsComposite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AwardsComposite.xib; sourceTree = "<group>"; };
+		FA6334361FC4F6C7008E74F1 /* AwardsComposite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardsComposite.swift; sourceTree = "<group>"; };
 		FA8516851FA6BF06001FAD44 /* AssignmentViewCellCurrent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentViewCellCurrent.swift; sourceTree = "<group>"; };
 		FAA609351F896C2F00F29B39 /* StudentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentViewCell.swift; sourceTree = "<group>"; };
 		FAA609371F896E3F00F29B39 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
@@ -155,7 +163,6 @@
 		FA0C2A141F81A9C700875225 /* FinalProject_Start_WithTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA460B8A1FB25D7F00448D65 /* SegmentedViewController.swift */,
 				FAA7C3961F832CC900D7AC4A /* Utilities.swift */,
 				FAA609371F896E3F00F29B39 /* Factory.swift */,
 				FAA609321F89656000F29B39 /* Controls */,
@@ -199,6 +206,7 @@
 		FA0C2A381F81AAF400875225 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA460B8A1FB25D7F00448D65 /* SegmentedViewController.swift */,
 				FA0C2A3B1F81AB1800875225 /* AwardsViewController.swift */,
 				FA0C2A511F81B27800875225 /* StudentListViewController.swift */,
 				FA0C2A531F81B29500875225 /* AssignmentListViewController.swift */,
@@ -305,6 +313,10 @@
 			children = (
 				FAF15B921FBBDA8D002577E6 /* AwardLaurel.xib */,
 				FAF15B941FBBF21A002577E6 /* AwardLaurel.swift */,
+				FA63342E1FC4F06C008E74F1 /* OverallProgress.xib */,
+				FA6334321FC4F381008E74F1 /* OverallProgress.swift */,
+				FA6334341FC4F68B008E74F1 /* AwardsComposite.xib */,
+				FA6334361FC4F6C7008E74F1 /* AwardsComposite.swift */,
 			);
 			name = Award;
 			sourceTree = "<group>";
@@ -397,7 +409,9 @@
 				FAA70EEC1FAEAB50007110B5 /* TasksValidateDTableFooter.xib in Resources */,
 				FAB542E41FAD36970016290C /* TasksTableHeader.xib in Resources */,
 				FAB542E81FAD4BA60016290C /* TasksTableFooter.xib in Resources */,
+				FA63342F1FC4F06C008E74F1 /* OverallProgress.xib in Resources */,
 				FAA70EEA1FAEA4D3007110B5 /* TasksValidateTableFooter.xib in Resources */,
+				FA6334351FC4F68B008E74F1 /* AwardsComposite.xib in Resources */,
 				FAF15B931FBBDA8D002577E6 /* AwardLaurel.xib in Resources */,
 				FA0C2A221F81A9C700875225 /* LaunchScreen.storyboard in Resources */,
 				FA0C2A1F1F81A9C700875225 /* Assets.xcassets in Resources */,
@@ -426,6 +440,7 @@
 				FA0C2A451F81AB3B00875225 /* PracticeUnit.swift in Sources */,
 				FA8516861FA6BF06001FAD44 /* AssignmentViewCellCurrent.swift in Sources */,
 				FAA6093E1F89B6C300F29B39 /* PracticeDaysViewController.swift in Sources */,
+				FA6334371FC4F6C7008E74F1 /* AwardsComposite.swift in Sources */,
 				FAC388681FA2C4EF0087CA87 /* AssignmentViewCell.swift in Sources */,
 				FAB542E61FAD4B990016290C /* TasksTableFooter.swift in Sources */,
 				FAA609441F8A9C6B00F29B39 /* SetingsViewController.swift in Sources */,
@@ -439,6 +454,7 @@
 				FAB542EA1FAE16910016290C /* TaskViewValidateController.swift in Sources */,
 				FAA609461F8AA29200F29B39 /* Settings.swift in Sources */,
 				FAA7C3971F832CC900D7AC4A /* Utilities.swift in Sources */,
+				FA6334331FC4F381008E74F1 /* OverallProgress.swift in Sources */,
 				FA0C2A3E1F81AB1800875225 /* AwardsViewController.swift in Sources */,
 				FA0C2A161F81A9C700875225 /* AppDelegate.swift in Sources */,
 				FA0C2A521F81B27800875225 /* StudentListViewController.swift in Sources */,

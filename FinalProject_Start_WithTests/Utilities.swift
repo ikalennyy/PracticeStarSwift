@@ -74,6 +74,17 @@ extension NSDate
     
 }
 
+func CreateRefreshControl()->UIRefreshControl{
+    
+    let refreshControl = UIRefreshControl()
+    refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")   
+    return refreshControl
+    
+}
+protocol DataReloadable {
+    func QueryDatabase()
+}
+
 
 
 

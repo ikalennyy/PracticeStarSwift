@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TasksViewController: UITableViewController, TaskFooterEventDelegate {
+class TasksViewController: UITableViewController, TaskFooterEventDelegate,DataReloadable {
 
     var theAssignment: Assignment!{
         didSet{
@@ -56,8 +56,15 @@ class TasksViewController: UITableViewController, TaskFooterEventDelegate {
         
         self.tableView.tableHeaderView = headerView
         self.tableView.tableFooterView = footerView
+        
+        self.tableView.refreshControl = CreateRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(QueryDatabase), for: .valueChanged)
     }
 
+    func QueryDatabase(){
+        self.tableView.refreshControl?.endRefreshing()
+        print("will go to the iCloud and fetch the records")
+    }
     
     //delegate event handler
     func FinishMyPractice(testParam: String){

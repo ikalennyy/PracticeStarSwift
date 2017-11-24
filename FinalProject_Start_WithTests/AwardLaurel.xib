@@ -16,14 +16,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AwardsLaurel" translatesAutoresizingMaskIntoConstraints="NO" id="uFT-34-UaN">
-                    <rect key="frame" x="48" y="39" width="312" height="183"/>
+                    <rect key="frame" x="20" y="39" width="368" height="183"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="183" id="ufR-3N-3lN"/>
+                        <constraint firstAttribute="height" constant="183" id="gYh-Qj-2wT"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xh-U7-ezB">
-                    <rect key="frame" x="168" y="81" width="94" height="59"/>
-                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="27"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xh-U7-ezB">
+                    <rect key="frame" x="145" y="69" width="94" height="59"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="94" id="Lr9-oa-mOK"/>
+                        <constraint firstAttribute="height" constant="59" id="bGY-JA-TIm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -32,11 +36,11 @@
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="uFT-34-UaN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="39" id="4mF-aS-i9A"/>
-                <constraint firstItem="uFT-34-UaN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7fr-k7-KRb"/>
-                <constraint firstItem="4Xh-U7-ezB" firstAttribute="centerX" secondItem="uFT-34-UaN" secondAttribute="centerX" constant="11" id="Krf-pP-Tq9"/>
-                <constraint firstItem="uFT-34-UaN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="SWV-uK-Usz"/>
-                <constraint firstItem="4Xh-U7-ezB" firstAttribute="centerY" secondItem="uFT-34-UaN" secondAttribute="centerY" constant="-20" id="pK1-ub-FbT"/>
+                <constraint firstItem="4Xh-U7-ezB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="69" id="8h2-VO-6Qz"/>
+                <constraint firstItem="uFT-34-UaN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="BzG-G7-6Ny"/>
+                <constraint firstItem="4Xh-U7-ezB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="145" id="HKN-Nl-Nrt"/>
+                <constraint firstItem="uFT-34-UaN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="39" id="VWt-UV-cGQ"/>
+                <constraint firstItem="uFT-34-UaN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bJ8-om-iG1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
