@@ -8,18 +8,19 @@
 // October 7, 2017
 
 import Foundation
+import CloudKit
 
 public enum TypeOfTask : Int {
     
-    case Other
+    case Other = 1 ,
   
-    case Scales
+     Scales,
     
-    case Etudes
+     Etudes,
     
-    case MusicPiece
+     MusicPiece,
     
-    case Reading
+     Reading
 }
 
 class Book{
@@ -37,6 +38,9 @@ class Book{
 
 class Task: Copying{
   
+    var recordID: CKRecordID!
+    var assignmentReferenceRecordID: CKReference!
+    
     var Number: Int = 1
     var assignment: Assignment
     
@@ -179,6 +183,27 @@ class Task: Copying{
         self.Items = original.Items?.clone()
         self.assignment = original.assignment
         self.Number = original.Number
+    }
+    
+    init (remoteRecord: CKRecord){
+        self.Name = remoteRecord[RemoteTask.name] as! String
+        self.Number = remoteRecord[RemoteTask.number] as! Int
+        
+         self.assignmentReferenceRecordID = remoteRecord["Assignment"] as! CKReference
+        
+        self.recordID = remoteRecord.recordID
+        
+        self.Items = Array<TaskItem>()
+        self.book = Book(name: "", author: "")
+        
+        // FOR MITJA: NOT SURE WHY IT DOES NOT COMPILE
+       // self.TypeOfTask = TypeOfTask(rawValue: remoteRecord[RemoteTask.typeOfTask])
+        // todo: remove
+        self.TypeOfTask = .Other
+
+        //TODO: NOT SURE HOW TO SET IT!!!
+        self.assignment = Assignment(student: Student(first:"igor", last: "igor",teacher: Teacher(first:"", last: "", instrumentClass:"")), practiceUnitsCount: 5)
+        
     }
 
     

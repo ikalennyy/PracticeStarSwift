@@ -15,26 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var appmodel: AppModel?
     
-    
+    var repo: IRepository?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        repo = CloudRepository()
+        
         appmodel = AppModel()
         
-        // FOR MITJA: DUE TO THE BUG IN MY SETTINGS SERIALIZATION, use this line to set the
-        // difference between the modes.  Student = false will trigger a teacher's mode
-        appmodel?.setting.isStudent = false
-        
+     
         
         // populate the students from the mock "data store"
-        let data =  DataSource.GetStudentsDataSource().GetSomeStudents_WithATeacher()
+        // Dependency injection based on the interface / protocol
+        let data =  DataSource.GetStudentsDataSource(repository: repo!).GetSomeStudents_WithATeacher()
         
         // mock populate the assignments from the data store
         let results = data.PopulateData()
         
         appmodel?.Students = results.getAllStudents()
+        
+        //TEMP, GET RID
+        if (appmodel?.setting.preFillDB)! {
+           // repo?.SeedDatabase(students: (appmodel?.Students)!)
+        }
+        //----
         
         
         if (appmodel?.IsTeacher())!{

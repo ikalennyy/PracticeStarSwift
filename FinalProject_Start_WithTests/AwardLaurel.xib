@@ -12,41 +12,39 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AwardLaurel" customModule="FinalProject_Start_WithTests" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="408" height="426"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="205"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AwardsLaurel" translatesAutoresizingMaskIntoConstraints="NO" id="uFT-34-UaN">
-                    <rect key="frame" x="20" y="39" width="368" height="183"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="183" id="gYh-Qj-2wT"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="205"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xh-U7-ezB">
-                    <rect key="frame" x="145" y="69" width="94" height="59"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxp-M3-zbQ">
+                    <rect key="frame" x="163" y="57" width="33" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="94" id="Lr9-oa-mOK"/>
-                        <constraint firstAttribute="height" constant="59" id="bGY-JA-TIm"/>
+                        <constraint firstAttribute="height" constant="21" id="9hC-T1-xd0"/>
+                        <constraint firstAttribute="width" constant="33" id="CcX-Ls-lSr"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="4Xh-U7-ezB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="69" id="8h2-VO-6Qz"/>
-                <constraint firstItem="uFT-34-UaN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="BzG-G7-6Ny"/>
-                <constraint firstItem="4Xh-U7-ezB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="145" id="HKN-Nl-Nrt"/>
-                <constraint firstItem="uFT-34-UaN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="39" id="VWt-UV-cGQ"/>
-                <constraint firstItem="uFT-34-UaN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bJ8-om-iG1"/>
+                <constraint firstItem="gxp-M3-zbQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="57" id="D30-Qk-Hy0"/>
+                <constraint firstItem="uFT-34-UaN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YYQ-kk-AVh"/>
+                <constraint firstItem="uFT-34-UaN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Zj6-bS-esh"/>
+                <constraint firstAttribute="trailing" secondItem="uFT-34-UaN" secondAttribute="trailing" id="bse-r0-i1f"/>
+                <constraint firstAttribute="bottom" secondItem="uFT-34-UaN" secondAttribute="bottom" id="nTn-HQ-SK3"/>
+                <constraint firstItem="gxp-M3-zbQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="163" id="nm0-yp-LZZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="lblTotalPoints" destination="4Xh-U7-ezB" id="TgG-zn-9J5"/>
+                <outlet property="lblTotalPoints" destination="gxp-M3-zbQ" id="NMm-RW-4We"/>
             </connections>
-            <point key="canvasLocation" x="42" y="-68"/>
+            <point key="canvasLocation" x="26.5" y="-151.5"/>
         </view>
     </objects>
     <resources>

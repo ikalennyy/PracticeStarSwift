@@ -8,9 +8,11 @@
 // October 7, 2017
 
 import Foundation
-
+import CloudKit
 
 class PracticeUnit{
+    
+    var recordID: CKRecordID!
     
     var Number: Int = 1 // at least one day to practice
     

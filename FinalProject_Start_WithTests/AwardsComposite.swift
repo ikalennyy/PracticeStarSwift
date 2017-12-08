@@ -13,6 +13,8 @@ class AwardsComposite: UIView {
     @IBOutlet var LaurelControl: UIView!
     
     @IBOutlet var ctrlOverallProgress: UIView!
+    
+    var medalsController: UIViewController!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -21,21 +23,30 @@ class AwardsComposite: UIView {
     }
     */
 
-    func setupControL(student: Student,settings: Settings){
+    func setupControL(navigationController: UINavigationController, student: Student,settings: Settings){
         
-      
-        let awardLaurelControl = self.LaurelControl.subviews[0] as! AwardLaurel
-        awardLaurelControl.setupControL(student: student, settings: settings)
-
-    }
-    
-    override func awakeFromNib() {
-        let awardLaurelControl = Bundle.main.loadNibNamed("AwardLaurel", owner:self, options:nil)?.first as! AwardLaurel
-        awardLaurelControl.frame = self.LaurelControl.bounds
-        self.LaurelControl.addSubview(awardLaurelControl)
         
         let overallProgressControl = Bundle.main.loadNibNamed("OverallProgress", owner:self, options:nil)?.first as! OverallProgress
-        overallProgressControl.frame = self.ctrlOverallProgress.bounds
-        self.ctrlOverallProgress.addSubview(overallProgressControl)
+        overallProgressControl.frame = CGRect(x: 15, y: 60, width: overallProgressControl.frame.width, height: overallProgressControl.frame.height)
+        self.addSubview(overallProgressControl)
+        
+        overallProgressControl.setupControl(student: student, settings: settings)
+        
+        
+        let awardLaurelControl = Bundle.main.loadNibNamed("AwardLaurel", owner:self, options:nil)?.first as! AwardLaurel
+        awardLaurelControl.frame = CGRect(x: 15, y: 170, width: awardLaurelControl.frame.width, height: awardLaurelControl.frame.height)
+        self.addSubview(awardLaurelControl)
+
+        awardLaurelControl.setupControL(student: student, settings: settings)
+        
+       
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        medalsController = storyBoard.instantiateViewController(withIdentifier: "MedalsController") as! MedalsViewController
+        
+        medalsController.view.frame = CGRect(x: 0, y: 380, width: medalsController.view.frame.width, height: medalsController.view.frame.height + 100)
+        self.addSubview(medalsController.view)
+
     }
+
 }

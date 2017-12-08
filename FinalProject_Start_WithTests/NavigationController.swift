@@ -27,7 +27,10 @@ class NavigationController: UINavigationController {
         
           
         // depending on if you are a student or a teacher, you see slightly different things
-        if (theModel?.IsStudent())!{            
+        if (theModel?.IsStudent())!{
+            if (appDelegate?.appmodel?.setting.preFillDB == false) {
+                self.tabBarController?.viewControllers?.remove(at: 2)
+            }
             CreateStudentPath()
             self.tabBarController?.tabBar.items![0].title = "Assignments"
         }

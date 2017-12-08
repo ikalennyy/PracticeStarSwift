@@ -14,9 +14,17 @@ import Foundation
  */
 class DataSource{
     
-    static func GetStudentsDataSource()->StudentFactory{
+    static var repo: IRepository?
+    
+    static func GetStudentsDataSource(repository: IRepository)->StudentFactory{
         
-        return StudentFactory()
+       
+        
+        var students = StudentFactory()
+        
+         repo = CloudRepository()
+        
+        return students
     }
 }
 
@@ -43,7 +51,7 @@ class StudentFactory{
         students.append(Student(first: "Cheech", last: "Chong", teacher:teacher))
         students.append(Student(first: "Mary Lou", last: "Gimme", teacher:teacher))
         students.append(Student(first: "Abdul", last: "Not-Paula", teacher:teacher))
-        students.append(Student(first: "Final", last: "Countdown", teacher:teacher))
+        students.append(Student(first: "Final", last: "Countdown", teacher:teacher)) 
 
         return self
     }
@@ -104,6 +112,20 @@ class StudentFactory{
             
             student.AwardMedal(forAssignment: assignment)
             // TODO: wont happen because one assignment can have one award, but for the sake of demonstration
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
+            student.AwardMedal(forAssignment: assignment)
             student.AwardMedal(forAssignment: assignment)
             student.AwardMedal(forAssignment: assignment)
             

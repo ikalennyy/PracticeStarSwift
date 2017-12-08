@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CloudKit
 
 // Implements functionality for Array Deep copy
 
@@ -83,6 +84,24 @@ func CreateRefreshControl()->UIRefreshControl{
 }
 protocol DataReloadable {
     func QueryDatabase()
+    func QueryDatabase(completionHandler: @escaping (Array<Assignment>) -> Void)
+}
+
+protocol IRepository{
+    
+    //func SaveStudents(students: Array<Student>)
+    //move out to the implementation of db layer, not into irepository
+    func SeedStudentRecords(students: Array<Student>, completionHandler: @escaping (Int, String) -> Void)
+    // func ClearDatabase(students: Array<Student>)
+    
+   // func GetStudent(recordID: CKRecord)->Student
+    
+    func GetAllStudents(completionHandler: @escaping (Array<Student>) -> Void)
+    func SeedAssignmentRecords(students: Array<Student>, completionHandler: @escaping (Int, String) -> Void)
+    func GetAllAssignments(completionHandler: @escaping (Array<Assignment>) -> Void)
+    
+    func SeedTaskRecords(students: Array<Student>, completionHandler: @escaping (Int, String) -> Void)
+
 }
 
 

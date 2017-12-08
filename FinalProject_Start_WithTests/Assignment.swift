@@ -9,6 +9,7 @@
 // October 7, 2017
 
 import Foundation
+import CloudKit
 
 public enum AssignmentStatus : Int {
     
@@ -25,7 +26,10 @@ public enum AssignmentStatus : Int {
 
 
 
-class Assignment{
+@objc  class Assignment: NSObject{
+    
+    var recordID: CKRecordID!
+    var studentReferenceRecordID: CKReference!
     
     var Number: Int = 0
 
@@ -98,13 +102,15 @@ class Assignment{
        
         var counter: Int = 0
         
-        for task in self.tasks!{
-            if task.AllOriginalTaskItemsValidated{
-                counter = counter + 1
+        if self.tasks != nil{
+            for task in self.tasks!{
+                if task.AllOriginalTaskItemsValidated{
+                    counter = counter + 1
+                }
             }
         }
       
-        if counter == self.tasks?.count
+        if self.tasks != nil && counter == self.tasks?.count
             {
                 return true
             }
@@ -114,6 +120,15 @@ class Assignment{
     }
 
 
+    var MaxPracticePointsToEarn: Int{
+        
+        var counter: Int = 0
+        for task in self.tasks!{
+            
+            counter = counter + task.MaxPracticePointsToEarn
+        }
+        return counter
+    }
 
     var AnyOriginalTaskItemsValidated: Bool {
         
@@ -158,8 +173,26 @@ class Assignment{
         TeacherValidatedAt = nil
         TeacherValidatedAndApproved = false
         
-        
     }
+    
+    init (remoteRecord: CKRecord){
+        
+        self.Number = remoteRecord[RemoteAssignment.number]! as! Int
+        self.practiceUnitCount = remoteRecord[RemoteAssignment.PracticeUnitCount]! as! Int
+        self.TeacherValidatedAndApproved = Bool(remoteRecord[RemoteAssignment.TeacherValidatedAndApproved] as! Bool)
+        self.studentReferenceRecordID = remoteRecord["Student"] as! CKReference
+        
+        if let date = remoteRecord[RemoteAssignment.TeacherValidatedAt]{
+            self.TeacherValidatedAt = date as! NSDate
+        }else{
+            self.TeacherValidatedAt = nil
+        }
+
+        self.recordID = remoteRecord.recordID
+        
+
+    }
+    
     
     func AddTask(task: Task){
         
@@ -224,9 +257,11 @@ class Assignment{
     var GetNumberOfValidatedTaskItems: Int{
         
         var counter: Int = 0
-        for _task in self.tasks!{
+        if self.tasks != nil{
+            for _task in self.tasks!{
             
-            counter = counter + _task.NumberOfTaskItemsValidated
+                counter = counter + _task.NumberOfTaskItemsValidated
+            }
         }
         return counter
     }

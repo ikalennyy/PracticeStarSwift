@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TasksViewController: UITableViewController, TaskFooterEventDelegate,DataReloadable {
+class TasksViewController: UITableViewController, TaskFooterEventDelegate {
 
     var theAssignment: Assignment!{
         didSet{
@@ -61,9 +61,27 @@ class TasksViewController: UITableViewController, TaskFooterEventDelegate,DataRe
         self.tableView.refreshControl?.addTarget(self, action: #selector(QueryDatabase), for: .valueChanged)
     }
 
+    
+        
     func QueryDatabase(){
         self.tableView.refreshControl?.endRefreshing()
         print("will go to the iCloud and fetch the records")
+        
+        if (theSettings?.GetDataFromDB)!{
+            
+            let repo = Repository()
+            
+            //returns assignments
+            repo.GetAllTasksForAssignment(assignment: theAssignment) { (tasks:Array<Task>) -> Void in
+                
+                self.theModel = tasks
+                self.tableView.reloadData()
+            }
+        }
+        else{
+            theModel = theAssignment.tasks!
+        }
+        
     }
     
     //delegate event handler
@@ -144,4 +162,5 @@ class TasksViewController: UITableViewController, TaskFooterEventDelegate,DataRe
             return cell
         }
     }
+
 }

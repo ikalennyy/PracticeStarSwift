@@ -11,7 +11,8 @@ import UIKit
 class Settings: NSObject, NSCoding{
     
     var isStudent: Bool = false
-    
+    var GetDataFromDB = false
+    var preFillDB = true
     
     override init(){
         

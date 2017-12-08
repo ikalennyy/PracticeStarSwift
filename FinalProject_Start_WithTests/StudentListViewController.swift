@@ -9,18 +9,20 @@
 
 import UIKit
 
-class StudentListViewController: UITableViewController,DataReloadable {
+class StudentListViewController: UITableViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var theModel: Array<Student>?
+    var theModel = Array<Student>()
     var theSetting: Settings?
+    let repo = Repository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-               
-        theModel = appDelegate.appmodel?.getAllStudents()
+        
         theSetting = appDelegate.appmodel?.setting
+        QueryDatabase()
+       
         
         self.tableView.refreshControl = CreateRefreshControl()
         self.tableView.refreshControl?.addTarget(self, action: #selector(QueryDatabase), for: .valueChanged)
@@ -28,7 +30,20 @@ class StudentListViewController: UITableViewController,DataReloadable {
 
     func QueryDatabase(){
         self.tableView.refreshControl?.endRefreshing()
-        print("will go to the iCloud and fetch the records")
+       
+        
+        if (theSetting?.GetDataFromDB)!{
+            
+            repo.GetAllStudents { (students:Array<Student>) -> Void in
+                
+                self.theModel = students
+                self.tableView.reloadData()
+            }
+        }
+        else{
+            // mocked up data
+            theModel = (appDelegate.appmodel?.getAllStudents())!
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +53,7 @@ class StudentListViewController: UITableViewController,DataReloadable {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return (theModel?.count)!
+        return (theModel.count)
     }
 
     
@@ -48,15 +63,15 @@ class StudentListViewController: UITableViewController,DataReloadable {
         
         
         // get the data
-        let item = theModel?[indexPath.row]
+        let item = theModel[indexPath.row]
         
         
         // Configure the cell...
-        let fullName = String(describing: item?.FirstName ?? "") + " " + String(describing: item?.LastName ?? "")
+        let fullName = String(describing: item.FirstName ?? "") + " " + String(describing: item.LastName ?? "")
         cell.lblStudentName.text = "\(fullName)"
         
         // display the image associated with the last name
-        let imageName = String(describing: item?.LastName ?? "")
+        let imageName = String(describing: item.LastName ?? "")
         if let image = UIImage(named: imageName){
               cell.studentImage.image? = image
         }
@@ -80,9 +95,9 @@ class StudentListViewController: UITableViewController,DataReloadable {
         }
  */
         if let row = tableView.indexPathForSelectedRow?.row{
-            let aStudent = theModel?[row]
+            let aStudent = theModel[row]
             let segmentedController = segue.destination as! SegmentedViewController
-            segmentedController.theStudent = aStudent!
+            segmentedController.theStudent = aStudent
             segmentedController.theSettings = theSetting
             
            // let assignmentController = segmentedController.childViewControllers[0] as! AssignmentListViewController

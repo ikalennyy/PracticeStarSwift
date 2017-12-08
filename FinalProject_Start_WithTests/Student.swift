@@ -8,6 +8,7 @@
 // October 7, 2017
 
 import Foundation
+import CloudKit
 
 class Student: Person{
     
@@ -16,7 +17,10 @@ class Student: Person{
     var Assignments: Array<Assignment>?
     
     private var awards: Awards?
-
+    
+    var recordID: CKRecordID!
+    
+    
 
     init(first: String, last: String, teacher taughtBy: Teacher){
         
@@ -28,7 +32,19 @@ class Student: Person{
         
         self.Teacher?.AddStudent(student: self)
         
+        self.awards = Awards()        
+
+    }
+    
+    init (remoteRecord: CKRecord){
+        
         self.awards = Awards()
+        
+        let fname = remoteRecord[RemoteStudent.firstName] as! String
+        let lname = remoteRecord[RemoteStudent.lastName] as! String
+        self.recordID = remoteRecord.recordID
+        
+        super.init(first: fname, last: lname)
     }
 
     
@@ -67,11 +83,40 @@ class Student: Person{
         return self.awards!
     }
     
+    
+    // totalpointsearned validated / totalpotential points
+    func GetOverallProgress()->Float{
+        
+        return Float(GetTotalPointsEarnedValidated()) / Float(GetTotalPotentialPoints())
+    }
+    
+    
+    func GetTotalPotentialPoints()->Int{
+        
+        var counter: Int = 0
+        
+        for assignment in self.Assignments!{
+            
+            if assignment.isCurrentAssignment == false{
+                //you got to count the practice days!!!!
+                for day in assignment.practiceUnits!{
+                    counter = counter + day.MaxPracticePointsToEarn
+                }
+                
+            }
+        }
+        return counter
+    }
+    
     // HOW MANY TOTAL POINTS DID THE STUDENT EARN FOR THOSE TASK ITEMS THAT WERE VALIDATED?
     func GetTotalPointsEarnedValidated() ->Int{
         var counter: Int = 0
         
+        if self.Assignments != nil
+        {
         for assignment in self.Assignments!{
+            
+         if assignment.isCurrentAssignment == false {
             
             let validatedTasks = assignment.GetValidatedTasks
                 if validatedTasks.count  > 0{
@@ -84,7 +129,8 @@ class Student: Person{
                     }
                 }
             }
-
+          }
+        }
           return counter
         }
     

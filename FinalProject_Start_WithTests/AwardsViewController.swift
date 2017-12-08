@@ -11,11 +11,11 @@ import UIKit
 
 
 
-class AwardsViewController: UIViewController,DataReloadable {
+class AwardsViewController: UIViewController {
 
-    @IBOutlet var medalCount: UILabel!
     
-    @IBOutlet var lblGreatJob: UILabel!
+    var awardComposite = AwardsComposite()
+    var scroller = UIScrollView()
     
     
     var theModel: Student?
@@ -24,7 +24,7 @@ class AwardsViewController: UIViewController,DataReloadable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         
         // if this is a student mode
         if let currentStudent = appDelegate.appmodel?.CurrentStudent
@@ -32,27 +32,24 @@ class AwardsViewController: UIViewController,DataReloadable {
             theModel = currentStudent
         }
         
-        
+        /*
         medalCount.text = "\(theModel?.getAllAwards().medals?.count ?? 0)"
         
         if (theModel?.getAllAwards().medals?.count)! > 0{
             lblGreatJob.text = lblGreatJob.text! + ", \(theModel?.FirstName ?? "") !"
         }
-        
-        
-        /*
-        let laurelControl = Bundle.main.loadNibNamed("AwardLaurel", owner:self, options:nil)?.first as! AwardLaurel
-        laurelControl.frame = self.view.bounds
-
-        self.view.addSubview(overallProgress)
- 
  */
- 
-        let awardComposite = Bundle.main.loadNibNamed("AwardsComposite", owner:self, options:nil)?.first as! AwardsComposite
-       
+
+        awardComposite = Bundle.main.loadNibNamed("AwardsComposite", owner:self, options:nil)?.first as! AwardsComposite
         awardComposite.frame = self.view.bounds
-        self.view.addSubview(awardComposite)
         
+        scroller = UIScrollView(frame: self.view.frame)
+        scroller.addSubview(awardComposite)
+        self.view.addSubview(scroller)
+
+        
+        
+        self.title = "Awards"
         
       //  self.tableView.refreshControl = CreateRefreshControl()
       //  self.tableView.refreshControl?.addTarget(self, action: #selector(QueryDatabase), for: .valueChanged)
@@ -63,13 +60,13 @@ class AwardsViewController: UIViewController,DataReloadable {
     override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(true)
     
-       // BECAUSE IT IS CACHING IT INSIDE OF THE SEGMENTED CONTROLLER,  WE NEED TO CONSTANTLY REFRESH IT
+        // BECAUSE IT IS CACHING IT INSIDE OF THE SEGMENTED CONTROLLER,  WE NEED TO CONSTANTLY REFRESH IT
         // TO SHOW THE CORRECT POINTS
-      // let laurelControl = self.view.subviews[7] as! AwardLaurel // need to find a way to find by name!
-       //laurelControl.setupControL(student: theModel!, settings: (appDelegate.appmodel?.setting)!)
         
-        let awardComposite = self.view.subviews[7] as! AwardsComposite // need to find a way to find by name!
-         awardComposite.setupControL(student: theModel!, settings: (appDelegate.appmodel?.setting)!)
+         awardComposite.setupControL(navigationController: self.navigationController!,student: theModel!, settings: (appDelegate.appmodel?.setting)!)
+        //we need to set the content size to allow for the space that would be added by the dynamic controls inside it, particularly by the medals
+         scroller.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + awardComposite.frame.height-150)
+        
     }
 
     func QueryDatabase(){

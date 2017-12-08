@@ -8,7 +8,9 @@
 
 import UIKit
 
-class PracticeDaysViewController: UITableViewController,DataReloadable {
+class PracticeDaysViewController: UITableViewController {
+    
+
 
     var theAssignment: Assignment!{
         didSet{

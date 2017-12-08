@@ -8,7 +8,9 @@
 // October 7, 2017
 import UIKit
 
-class AssignmentListViewController: UITableViewController,DataReloadable {
+class AssignmentListViewController: UITableViewController {
+
+    let repo = Repository()
 
     var isStudent: Bool = false
     @IBAction func btnViewDays_Action(_ sender: UIButton) {
@@ -22,28 +24,95 @@ class AssignmentListViewController: UITableViewController,DataReloadable {
         }
     }
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var theSettings: Settings?
-    var theModel: Array<Assignment>?
+    var theModel = Array<Assignment>()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        // get all of the assignments
-        theModel = theStudent.getAllAssignments()
+        theSettings = appDelegate.appmodel?.setting
+
+        GetData()
+        
         
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
        // tableView.separatorColor = UIColor.init(red: 0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1)     
         
         self.tableView.refreshControl = CreateRefreshControl()
-        self.tableView.refreshControl?.addTarget(self, action: #selector(QueryDatabase), for: .valueChanged)
+        self.tableView.refreshControl?.addTarget(self, action: #selector(GetData), for: .valueChanged)
+        
+        
+        //DB
+            //If there are assignment records in the iCloud that matche the student id, then do nothing
+            // else populate the DB and return the records and update the RecordIDs for all the assignments for this student
+        //
         
     }
+
     
-    func QueryDatabase(){
+    @objc func GetData(){
+       
+        // TODO: IF theStudent = nil, then call DB, get the student, then onComplete call this function
+        // also, maybe we can do it in NavigationController?
+        
+        
         self.tableView.refreshControl?.endRefreshing()
-        print("will go to the iCloud and fetch the records")
+        
+        if (theSettings?.GetDataFromDB)!{
+        
+            QueryDatabase() { (assignments:Array<Assignment>) -> Void in
+            
+                //we also need to get the parent student record
+                self.repo.GetStudentForRecordID(student: self.theStudent) { (returnStudent:Student) -> Void in
+                
+                    for assignment in assignments{
+                        assignment.student = returnStudent
+                    }
+                    self.theModel = assignments
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        else{
+            //mocked up data
+            theModel = theStudent.getAllAssignments()
+        }
     }
+    
+    
+     func QueryDatabase(completionHandler: @escaping (Array<Assignment>) -> Void){
+            
+            repo.GetAllAssignmentsForTheStudent(student: theStudent) { (assignments:Array<Assignment>) -> Void in
+                
+                completionHandler(assignments)
+            }
+      }
+    
+  
+    
+    func QueryDatabase_old(){
+        self.tableView.refreshControl?.endRefreshing()
+       
+        
+        if (theSettings?.GetDataFromDB)!{
+            
+            let repo = Repository()
+            
+            //returns assignments
+            repo.GetAllAssignmentsForTheStudent(student: theStudent) { (assignments:Array<Assignment>) -> Void in                
+                
+                self.theModel = assignments
+                self.tableView.reloadData()
+            }
+        }
+        else{
+            theModel = theStudent.getAllAssignments()
+        }
+
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         //
         tableView.reloadData()
@@ -56,7 +125,7 @@ class AssignmentListViewController: UITableViewController,DataReloadable {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return (theModel?.count)!
+        return (theModel.count)
     }
 
     
@@ -67,21 +136,21 @@ class AssignmentListViewController: UITableViewController,DataReloadable {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         // get the data
-        let _item = theModel?[indexPath.row]
+        let _item = theModel[indexPath.row]
         
         
         
-        if (_item?.isCurrentAssignment)!
+        if (_item.isCurrentAssignment)
         {
             let cellCurrent:AssignmentViewCellCurrent = tableView.dequeueReusableCell(withIdentifier: "AssignmentCellCurrent", for: indexPath) as! AssignmentViewCellCurrent
-            cellCurrent.setupCell(item: _item!, setting: theSettings!)
+            cellCurrent.setupCell(item: _item, setting: theSettings!)
             cellCurrent.selectionStyle = UITableViewCellSelectionStyle.none
             return cellCurrent
         }
         else{
             let cellPast:AssignmentViewCell = tableView.dequeueReusableCell(withIdentifier: "AssignmentCell", for: indexPath) as! AssignmentViewCell
-            let progressValue = _item?.ValidatedTasksItemsRatio
-            cellPast.setupCell(item:_item!, ratio: progressValue!)
+            let progressValue = _item.ValidatedTasksItemsRatio
+            cellPast.setupCell(item:_item, ratio: progressValue)
             cellPast.selectionStyle = UITableViewCellSelectionStyle.none
             return cellPast
         }
@@ -119,17 +188,17 @@ class AssignmentListViewController: UITableViewController,DataReloadable {
         
             if segue.identifier == "FromAsmtToDays" || segue.identifier == "FromAsmtToDaysCurrent"{
                 if let row = selected_row{ //tableView.indexPathForSelectedRow?.row{
-                    let assignment = theModel?[row]
+                    let assignment = theModel[row]
                     let daysController = segue.destination as! PracticeDaysViewController
-                    daysController.theAssignment = assignment!
+                    daysController.theAssignment = assignment
                     daysController.theSettings = theSettings
                 }
             }
             else if segue.identifier == "FromAsmtToValidate" || segue.identifier == "FromAsmtToValidatedCurrent"{
                 if let row = selected_row{ //tableView.indexPathForSelectedRow?.row{
-                    let assignment = theModel?[row]
+                    let assignment = theModel[row]
                     let taskController = segue.destination as! TasksViewValidateController
-                    taskController.theAssignment = assignment!
+                    taskController.theAssignment = assignment
                     taskController.theSettings = self.theSettings                    
                 }
             }

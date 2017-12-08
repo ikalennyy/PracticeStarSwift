@@ -17,6 +17,9 @@ class Medal{
         
         self.assignment = forAssignment
     }
+    func AwardedFor()->Assignment{
+        return self.assignment
+    }
 }
     
 class Awards{
@@ -34,6 +37,7 @@ class Awards{
         
         medals?.append(Medal(forAssignment: forAssignment))
     }
+    
     
     
 }

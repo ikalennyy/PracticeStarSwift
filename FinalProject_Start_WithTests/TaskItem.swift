@@ -8,8 +8,11 @@
 // October 7, 2017
 
 import Foundation
+import CloudKit
 
 class TaskItem: Copying{
+    
+    var recordID: CKRecordID!
     
     var Number: Int = 1 
     var Name: String        // Example: C-Major

@@ -44,7 +44,8 @@ class AssignmentViewCell: UITableViewCell {
         if status == .FullyApproved{
             
             progressBar.progressTintColor = UIColor.init(red: 154/255, green: 226/255.0, blue: 167/255.0, alpha: 1)
-            progressBar.progress = Float(ratio)
+           // progressBar.progress = Float(ratio)
+            progressBar.setProgress(ratio, animated: true)
             
             if let image = UIImage(named: "AssignmentBullet_full"){
                 assignmentIcon.image = image
@@ -57,7 +58,8 @@ class AssignmentViewCell: UITableViewCell {
         else if status == .NotApproved{
             
              progressBar.progressTintColor = UIColor.init(red: 248/255, green: 126/255.0, blue: 81/255.0, alpha: 1)
-             progressBar.progress = Float(ratio)
+             //progressBar.progress = Float(ratio)
+             progressBar.setProgress(ratio, animated: true)
             
             if let image = UIImage(named: "AssignmentBullet_invalid"){
                 assignmentIcon.image = image
@@ -70,7 +72,8 @@ class AssignmentViewCell: UITableViewCell {
         else if status == .PartiallyApproved{
             
               progressBar.progressTintColor = UIColor.init(red: 252/154, green: 206/255.0, blue: 84/255.0, alpha: 1)
-              progressBar.progress = Float(ratio)
+              //progressBar.progress = Float(ratio)
+              progressBar.setProgress(ratio, animated: true)
             
             if let image = UIImage(named: "AssignmentBullet_partial"){
                 assignmentIcon.image = image
@@ -84,7 +87,8 @@ class AssignmentViewCell: UITableViewCell {
         else if status == .AwardApproved{
             
               progressBar.progressTintColor = UIColor.init(red: 154/255, green: 226/255.0, blue: 167/255.0, alpha: 1)
-              progressBar.progress = Float(ratio)
+              //progressBar.progress = Float(ratio)
+              progressBar.setProgress(ratio, animated: true)
             
             if let image = UIImage(named: "AssignmetBullet_Award"){
                 assignmentIcon.image = image
