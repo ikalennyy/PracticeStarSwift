@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "AwardLaurel.setupControL(student : Student, settings : Settings) -&gt; ():AwardLaurel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "lblTotalPoints.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DBSeedViewController.RetrieveAllAssignments(Any) -&gt; ():DBSeedViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DBSeedViewController.(RetrieveAllAssignments(Any) -&gt; ()).(closure #1):DBSeedViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dbassignment.studentReferenceRecordID">
+            </PersistentString>
+            <PersistentString
+               value = "dbassignment.studentReferenceRecordID.recordID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.tableView(UITableView, didSelectRowAt : IndexPath) -&gt; ():AssignmentListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TaskItem.assignPoint() -&gt; ():Task.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.(QueryDatabase(completionHandler : ([Assignment]) -&gt; ()) -&gt; ()).(closure #1):AssignmentListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():AssignmentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination">
+            </PersistentString>
+            <PersistentString
+               value = "segue.identifier == &quot;FromAsmtToValidated&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "tableView.indexPathForSelectedRow?.row">
+            </PersistentString>
+            <PersistentString
+               value = "segue.identifier">
+            </PersistentString>
+            <PersistentString
+               value = "view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TaskItem.assignPointsForPractice() -&gt; ():TaskItem.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Assignment.encode(with : NSCoder) -&gt; ():Assignment.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PracticeDaysViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:PracticeDaysViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item?.TotalPracticePointsEarned">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Settings.init(coder : NSCoder) -&gt; Settings?:Settings.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.theStudentModel.didset:AssignmentListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NavigationController.viewDidLoad() -&gt; ():NavigationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.viewControllers">
+            </PersistentString>
+            <PersistentString
+               value = "self.viewControllers[0].nibName">
+            </PersistentString>
+            <PersistentString
+               value = "appDelegate?.appmodel?.setting">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Repository.(GetAllTasksForAssignment(assignment : Assignment, completionHandler : ([Task]) -&gt; ()) -&gt; ()).(closure #2).(closure #1):Repository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "assignment">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Repository.(GetAllAssignments(completionHandler : ([Assignment]) -&gt; ()) -&gt; ()).(closure #1):Repository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SegmentedViewController.viewDidLoad() -&gt; ():SegmentedViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.childViewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentCellCtrl.setAssignment(status : AssignmentStatus, name : String) -&gt; ():AssignmentCellCtrl.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "assignmentIcon.frame">
+            </PersistentString>
+            <PersistentString
+               value = "lblAssignmentName.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Assignment.createPracticeUnit() -&gt; ():Assignment.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TasksViewValidateController.(GetData() -&gt; ()).(closure #1).(closure #1):TaskViewValidateController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CloudRepository.(LoadStudents() -&gt; ()).(closure #2).(closure #1):CloudRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_students.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static iCloudManager.initializeiCloud() -&gt; ():iCloudManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "success">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CloudRepository.saveAssignment(assignment : Assignment) -&gt; ():CloudRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Student.init(remoteRecord : CKRecord) -&gt; Student:Student.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AwardsComposite.setupControL(navigationConroller : UINavigationController, student : Student, settings : Settings) -&gt; ():AwardsComposite.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationConroller.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AwardsViewController.viewDidLoad() -&gt; ():AwardsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController">
+            </PersistentString>
+            <PersistentString
+               value = "theModel?.awards">
+            </PersistentString>
+            <PersistentString
+               value = "navigationController.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AwardsComposite.setupControL(student : Student, settings : Settings) -&gt; ():AwardsComposite.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.LaurelControl.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "appmodel?.setting">
+            </PersistentString>
+            <PersistentString
+               value = "appmodel?.setting.serializedObjectSeededOnce">
+            </PersistentString>
+            <PersistentString
+               value = "appmodel?.setting.isStudent">
+            </PersistentString>
+            <PersistentString
+               value = "self.window!.rootViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:AssignmentListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:AssignmentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item?.status">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TasksViewController.viewDidLoad() -&gt; ():TasksViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CloudRepository.SeedAssignments() -&gt; ():CloudRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PracticeDaysViewController.viewDidLoad() -&gt; ():PracticeDaysViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Settings.retrieveSettings() -&gt; Settings:Settings.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.theStudent.didset:AssignmentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationItem.title ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MedalsViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():MedalsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Task.init(typeOfTask : TypeOfTask, book : Book?, assignment : Assignment) -&gt; Task:Task.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NavigationController.CreateStudentPath() -&gt; ():NavigationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PracticeUnit.TotalPracticePoints.getter:PracticeUnit.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "task.TotalPracticePoints">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TaskItem.StudentCompleted.setter:TaskItem.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AwardsComposite.setupControL(navigationController : UINavigationController, student : Student, settings : Settings) -&gt; ():AwardsComposite.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StudentFactory.CreateAssignments(forStudents : [Student], status : AssignmentStatus) -&gt; ():Factory.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "assignment.Number">
+            </PersistentString>
+            <PersistentString
+               value = "assignment">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StudentFactory.PopulateAssignment(student : Student, assignment : Assignment, status : AssignmentStatus) -&gt; ():Factory.swift">
+      </ContextState>
+      <ContextState
+         contextName = "StudentListViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:StudentListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Task.TotalPracticePointsEarned.getter:Task.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Assignment.ValidatedTasksItemsRatio.getter:Assignment.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "validated / total">
+            </PersistentString>
+            <PersistentString
+               value = "GetNumberOfValidatedTaskItems / GetNumberOfTaskItems">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TasksViewValidateController.(QueryDatabase() -&gt; ()).(closure #1):TaskViewValidateController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Repository.(GetAllStudents(completionHandler : ([Student]) -&gt; ()) -&gt; ()).(closure #1):Repository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TasksViewValidateController.QueryDatabase() -&gt; ():TaskViewValidateController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PracticeUnit.init(original : Assignment) -&gt; PracticeUnit:PracticeUnit.swift">
+      </ContextState>
+      <ContextState
+         contextName = "StudentListViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():StudentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination">
+            </PersistentString>
+            <PersistentString
+               value = "aStudent">
+            </PersistentString>
+            <PersistentString
+               value = "segmentedController.childViewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FinalProject_Start_WithTestsTests.testCreateModelWithDefaults() -&gt; ():FinalProject_Start_WithTestsTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "day?.TotalPracticePoints">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CloudRepository.(LoadStudents() -&gt; ()).(closure #1):CloudRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_students.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MedalsViewController.viewDidLoad() -&gt; ():MedalsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+            <PersistentString
+               value = "navigationController.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StudentFactory.CreateAssignments(status : AssignmentStatus) -&gt; ():Factory.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Assignment.setNextDayCurrent() -&gt; ():Assignment.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.practiceUnits?.count">
+            </PersistentString>
+            <PersistentString
+               value = "practiceUnitCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TasksViewValidateController.tableView(UITableView, viewForHeaderInSection : Int) -&gt; UIView?:TaskViewValidateController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Task.AllTaskItemsPracticed.getter:Task.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TasksViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:TasksViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "task.Items?[indexPath.row]">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "theModel?[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Assignment.init(student : Student, practiceUnitsCount : Int) -&gt; Assignment:Assignment.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.Number">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.(QueryDatabase1(completionHandler : ([Assignment]) -&gt; ()) -&gt; ()).(closure #1):AssignmentListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.viewDidLoad() -&gt; ():AssignmentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Task.init(remoteRecord : CKRecord) -&gt; Task:Task.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "remoteRecord[&quot;TypeOfTask&quot;] ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.theSettings.didset:AssignmentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationItem.title ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StudentListViewController.viewDidLoad() -&gt; ():StudentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DBSeedViewController.(RetrieveStudents(Any) -&gt; ()).(closure #1):DBSeedViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Assignment.init(coder : NSCoder) -&gt; Assignment:Assignment.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "aDecoder.decodeObject(forKey: &quot;Number&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SegmentedViewController.displayCurrentTab(Int) -&gt; ():SegmentedViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.contentView.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "self.contentView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentViewCell.setupCell(status : AssignmentStatus, name : String, ratio : Int) -&gt; ():AssignmentViewCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CloudRepository.SeedDatabase(students : [Student]) -&gt; ():CloudRepository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentCellCtrl.setAssignmentMode(mode : AssignmentMode) -&gt; ():AssignmentCellCtrl.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "assignmentIcon.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Repository.SeedTaskRecords(students : [Student], completionHandler : (Int, String) -&gt; ()) -&gt; ():Repository.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Repository.GetAllStudentAssignmentTasks(assignment : Assignment, completionHandler : ([Task]) -&gt; ()) -&gt; ():Repository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "assignment.recordID.recordName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Task.init(original : Task) -&gt; Task:Task.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AwardsViewController.viewDidAppear(Bool) -&gt; ():AwardsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static iCloudManager.getFromCloud() -&gt; [Student]:iCloudManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "TasksViewController.tableView(UITableView, viewForHeaderInSection : Int) -&gt; UIView?:TasksViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "task">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.(viewDidLoad() -&gt; ()).(closure #1).(closure #1):AssignmentListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Assignment.init(remoteRecord : CKRecord) -&gt; Assignment:Assignment.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "remoteRecord[&quot;Number&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

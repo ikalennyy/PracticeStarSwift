@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "AssignmentListViewController.theStudent.didset:AssignmentListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.viewDidLoad() -&gt; ():AssignmentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationItem.backBarButtonItem?.title">
+            </PersistentString>
+            <PersistentString
+               value = "navigationItem.backBarButtonItem.title">
+            </PersistentString>
+            <PersistentString
+               value = "navigationItem.backBarButtonItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AssignmentListViewController.numberOfSections(in : UITableView) -&gt; Int:AssignmentListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationItem.backBarButtonItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NavigationController.CreateStudentPath() -&gt; ():NavigationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewController.navigationItem.backBarButtonItem?.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
