@@ -1,5 +1,6 @@
 
-chmod +x /users/igorkalennyy/G*/iOS590/ClassProjects/FinalProject/FinalClass2/PracticeStarSwift/FindPath.txt
+chmod +x /users/igorkalennyy/G*/iOS590/ClassProjects/FinalProject/Src/FindPath.txt
 
-cd /users/igorkalennyy/G*/iOS590/ClassProjects/FinalProject/FinalClass2/PracticeStarSwift
+cd /users/igorkalennyy/G*/iOS590/ClassProjects/FinalProject/Src/
 
+git clone https://github.com/ikalennyy/PracticeStarSwift.git
