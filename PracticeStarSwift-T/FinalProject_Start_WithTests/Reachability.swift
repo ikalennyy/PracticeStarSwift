@@ -1,5 +1,12 @@
+// Practice Star
+// Igor Kalennyy
+// "A590 / Spring 2017"
+// December 15, 2017
+
 import Foundation
 import SystemConfiguration
+
+// reference: https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift
 
 class Reachability {
     var hostname: String?

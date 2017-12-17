@@ -1,11 +1,9 @@
 //
 //  OverallProgress.swift
-//  FinalProject_Start_WithTests
-//
-//  Created by Igor Kalennyy on 11/21/17.
-//  Copyright © 2017 A290/A590 Fall 2017 - ikalenny. All rights reserved.
-//
-
+// Practice Star
+// Igor Kalennyy
+// "A590 / Spring 2017"
+// December 15, 2017
 
 // Inspiration for the drawing of the bar:
 // https://stackoverflow.com/questions/39215050/how-to-make-a-custom-progress-bar-in-swift-ios

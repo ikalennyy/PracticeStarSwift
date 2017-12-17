@@ -1,10 +1,9 @@
 //
 //  Settings.swift
-//  FinalProject_Start_WithTests
-//
-//  Created by Igor Kalennyy on 10/8/17.
-//  Copyright © 2017 A290/A590 Fall 2017 - ikalenny. All rights reserved.
-//
+// Practice Star Student
+// Igor Kalennyy
+// "A590 / Spring 2017"
+// December 15, 2017
 
 import UIKit
 
@@ -19,7 +18,7 @@ class Settings: NSObject, NSCoding{
     
     var isStudent: Bool = true
     var GetDataFromDB = false
-    var dataSource: StudentsDataSource = .Local
+    var dataSource: StudentsDataSource = .Memory
 
     //did we already seed the cloud wiht our serialized object once?
     var serializedObjectSeededOnce = false

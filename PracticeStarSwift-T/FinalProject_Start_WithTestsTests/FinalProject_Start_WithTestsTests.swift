@@ -1,10 +1,9 @@
 //
 //  FinalProject_Start_WithTestsTests.swift
-//  FinalProject_Start_WithTestsTests
-//
-//  Created by Igor Kalennyy on 10/1/17.
-//  Copyright © 2017 A290/A590 Fall 2017 - ikalenny. All rights reserved.
-//
+// Practice Star
+// Igor Kalennyy
+// "A590 / Spring 2017"
+// December 15, 2017
 
 import XCTest
 @testable import FinalProject_Start_WithTests

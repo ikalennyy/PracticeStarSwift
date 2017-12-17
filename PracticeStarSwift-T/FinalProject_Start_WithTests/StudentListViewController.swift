@@ -1,11 +1,10 @@
 //
 //  StudentListViewController.swift
 
-// My Practice Log project
+// Practice Star
 // Igor Kalennyy
-// "Homework 105"
 // "A590 / Spring 2017"
-// October 7, 2017
+// December 15, 2017
 
 import UIKit
 
